@@ -26,7 +26,11 @@
   height: 123px;
   width: 100%;
   margin-bottom: 22px;
-  background-color: red;
+
+  img{
+   width: 223px;
+   height: 123px;
+  }
  }
 
  .card-statistics{
@@ -55,9 +59,10 @@
  }
 
  .card-title{
-  margin: 21px 31px 59px 0;
+  margin: 21px 31px 40px 0;
+  height: 40px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 23px;
   text-align: right;
   color: #4F4F4F;
@@ -73,6 +78,7 @@
   font-size: 12px;
   cursor: pointer;
   margin-left: 40px;
+
   margin-bottom: 10px;
  }
 }

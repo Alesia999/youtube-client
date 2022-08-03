@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-search-results></app-search-results>
+<app-header (isResultOn)="showResults($event)"></app-header>
+<app-search-results *ngIf="isResultVisible"></app-search-results>
