@@ -22,6 +22,7 @@ export class YoutubeService {
           description: item.snippet.description,
           imageUrl: item.snippet.thumbnails.default.url,
           channelTitle: item.snippet.channelTitle,
+          tags: item.snippet.tags,
           categoryId: item.snippet.categoryId,
           statistics: {
             viewCount: item.statistics.viewCount,
