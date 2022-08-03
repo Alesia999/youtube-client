@@ -1,0 +1,6 @@
+<ng-container *ngIf="searchResults$ | async as searchResults">
+  <app-search-item
+    class="search-item"
+    *ngFor="let searchItem of searchResults"
+  ></app-search-item>
+</ng-container>
