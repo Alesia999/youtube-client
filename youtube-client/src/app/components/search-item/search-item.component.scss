@@ -9,7 +9,7 @@
  border-radius: 5px;
  position: relative;
 
- .footer{
+ .footer {
   background-color: #2F80ED;
   border-radius: 0px 0px 5px 5px;
   height: 5px;
@@ -18,27 +18,28 @@
   width: 263px;
  }
 }
+
 .card-wrapper {
  padding: 20px 20px 0 20px;
 
- .card-image{
+ .card-image {
   width: 223px;
   height: 123px;
   width: 100%;
   margin-bottom: 22px;
 
-  img{
+  img {
    width: 223px;
    height: 123px;
   }
  }
 
- .card-statistics{
+ .card-statistics {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .statistics-item{
+  .statistics-item {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -58,7 +59,7 @@
   }
  }
 
- .card-title{
+ .card-title {
   margin: 21px 31px 40px 0;
   height: 40px;
   font-weight: 700;
@@ -68,7 +69,7 @@
   color: #4F4F4F;
  }
 
- .card-button{
+ .card-button {
   background-color: #2F80ED;
   border-radius: 5px;
   width: 120px;
