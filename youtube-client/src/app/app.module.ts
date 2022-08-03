@@ -8,6 +8,7 @@ import { FilteringComponent } from './header/filtering/filtering.component';
 import { SearchResultsComponent } from './search/components/search-results/search-results.component';
 import { SearchItemComponent } from './search/components/search-item/search-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './search/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     FilteringComponent,
     SearchResultsComponent,
     SearchItemComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

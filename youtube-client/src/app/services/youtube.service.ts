@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { SearchResponse } from '../search/models/search-response.model';
 import { SearchResults } from '../search/models/search-results.model';
 
@@ -8,6 +8,8 @@ import { SearchResults } from '../search/models/search-results.model';
   providedIn: 'root',
 })
 export class YoutubeService {
+  private filterString = new BehaviorSubject('');
+  sharedFilterString = this.filterString.asObservable();
   responseUrl = 'assets/response/response.json';
 
   constructor(private http: HttpClient) {}
@@ -34,5 +36,9 @@ export class YoutubeService {
         }));
       })
     );
+  }
+
+  updateFilterString(filterString: string) {
+    this.filterString.next(filterString);
   }
 }

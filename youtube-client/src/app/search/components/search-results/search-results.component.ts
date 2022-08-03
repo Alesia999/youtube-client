@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import { YoutubeService } from 'src/app/services/youtube.service';
 import { SearchResults } from '../../models/search-results.model';
@@ -10,10 +10,14 @@ import { SearchResults } from '../../models/search-results.model';
 })
 export class SearchResultsComponent implements OnInit {
   searchResults$?: Observable<SearchResults>;
+  filterString!: string;
 
   constructor(private youtubeService: YoutubeService) {}
 
   ngOnInit() {
     this.searchResults$ = this.youtubeService.getSearchResults();
+    this.youtubeService.sharedFilterString.subscribe(
+      (filterString) => (this.filterString = filterString)
+    );
   }
 }

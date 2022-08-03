@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { YoutubeService } from 'src/app/services/youtube.service';
 
 @Component({
   selector: 'app-header',
@@ -10,21 +11,23 @@ export class HeaderComponent implements OnInit {
   sortingText!: string;
   isFilterOn: boolean = false;
   @Output() isResultOn: EventEmitter<boolean> = new EventEmitter();
-  constructor() {}
+  constructor(private readonly youtubeService: YoutubeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.youtubeService.sharedFilterString.subscribe((sortingText) => {
+      this.sortingText = sortingText;
+    });
+  }
   search(searchText: string) {
     if (searchText) {
       console.log(searchText);
       this.isResultOn.emit(true);
-    }else{
+    } else {
       this.isResultOn.emit(false);
     }
   }
   sortBySortingText(sortingText: string) {
-    if (sortingText) {
-      console.log(sortingText);
-    }
+    this.youtubeService.updateFilterString(sortingText);
   }
   toggleFilter() {
     this.isFilterOn = !this.isFilterOn;
