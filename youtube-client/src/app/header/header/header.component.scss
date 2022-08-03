@@ -1,0 +1,115 @@
+:host {
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ background-color: #E5E5E5;
+ position: relative;
+}
+
+.header-wrapper {
+ display: flex;
+ flex-wrap: wrap;
+ padding: 28px 0 28px;
+ align-items: center;
+ margin: 0 auto;
+}
+
+.searching {
+ display: flex;
+ align-items: center;
+
+ .logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+ }
+
+ .search-input {
+  width: 396px;
+  height: 24px;
+  background-color: #EFEFEF;
+  border: none;
+  font-size: 12px;
+ }
+
+ .search-button {
+  width: 80px;
+  height: 24px;
+  background-color: #2F80ED;
+  border-radius: 0px 4px 4px 0px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+ }
+
+ .filtering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  height: 24px;
+  width: 24px;
+  border-radius: 5px;
+  background-color: #2F80ED;
+  cursor: pointer;
+ }
+}
+
+.login {
+ display: flex;
+ align-items: center;
+ position: absolute;
+ right: 158px;
+
+ .login-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #4F4F4F;
+ }
+
+ .login-image {
+  height: 19.2px;
+  margin-left: 10px;
+ }
+}
+
+.sorting {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding-bottom: 19px;
+
+ .sorting-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 11px;
+  color: #929292;
+ }
+
+ .sorting-option {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 21px;
+  text-decoration: underline;
+  color: #2F80ED;
+  cursor: pointer;
+ }
+
+ .sorting-option-text {
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #2F80ED;
+  cursor: pointer;
+ }
+
+ .sorting-input {
+  background-color: #FFFFFF;
+  border: none;
+ }
+}

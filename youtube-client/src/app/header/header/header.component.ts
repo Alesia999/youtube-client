@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  searchText!: string;
+  sortingText!: string;
+  isFilterOn: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  search(searchText: string) {
+		if (searchText) {
+			console.log(searchText)
+		}
+	}
+  sortBySortingText(sortingText: string) {
+		if (sortingText) {
+			console.log(sortingText)
+		}
+	}
+  toggleFilter() {
+    this.isFilterOn = !this.isFilterOn;
+  }
 }
