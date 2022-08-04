@@ -19,5 +19,15 @@ export class SearchResultsComponent implements OnInit {
     this.youtubeService.sharedFilterString.subscribe(
       (filterString) => (this.filterString = filterString)
     );
+    this.youtubeService.sharedSortedByViews.subscribe((orderByViews) => {
+      if (orderByViews) {
+        this.searchResults$ = this.youtubeService.sortByViews(orderByViews);
+      }
+    });
+    this.youtubeService.sharedSortedByDate.subscribe((orderByDate) => {
+      if (orderByDate) {
+        this.searchResults$ = this.youtubeService.sortByDate(orderByDate);
+      }
+    });
   }
 }

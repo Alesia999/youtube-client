@@ -9,7 +9,11 @@ import { SearchResults } from 'src/app/models/search-results.model';
 })
 export class YoutubeService {
   private filterString = new BehaviorSubject('');
+  private sortedByViews = new BehaviorSubject('');
+  private sortedByDate = new BehaviorSubject('');
   sharedFilterString = this.filterString.asObservable();
+  sharedSortedByViews = this.sortedByViews.asObservable();
+  sharedSortedByDate = this.sortedByDate.asObservable();
   responseUrl = 'assets/response/response.json';
 
   constructor(private http: HttpClient) {}
@@ -40,5 +44,37 @@ export class YoutubeService {
 
   updateFilterString(filterString: string) {
     this.filterString.next(filterString);
+  }
+
+  updateSortedByViews(order: string) {
+    this.sortedByViews.next(order);
+  }
+
+  updateSortedByDate(order: string) {
+    this.sortedByDate.next(order);
+  }
+
+  sortByViews(order: string) {
+    return this.getSearchResults().pipe(
+      map((searchResults) =>
+        searchResults.sort((a, b) => {
+          return order === 'desc'
+            ? Number(a.statistics.viewCount) - Number(b.statistics.viewCount)
+            : Number(b.statistics.viewCount) - Number(a.statistics.viewCount);
+        })
+      )
+    );
+  }
+
+  sortByDate(order: string) {
+    return this.getSearchResults().pipe(
+      map((searchResults) =>
+        searchResults.sort((a, b) => {
+          return order === 'desc'
+            ? new Date(a.date).getTime() - new Date(b.date).getTime()
+            : new Date(b.date).getTime() - new Date(a.date).getTime();
+        })
+      )
+    );
   }
 }
