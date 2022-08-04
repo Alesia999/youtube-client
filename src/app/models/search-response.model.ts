@@ -10,6 +10,7 @@ interface SearchResponseItem {
     description: string;
     thumbnails: Thumbnails;
     channelTitle: string;
+    tags: string[];
     categoryId: string;
   };
   statistics: {
