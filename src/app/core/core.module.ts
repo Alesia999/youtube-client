@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { YoutubeModule } from '../youtube/youtube.module';
 import { FormsModule } from '@angular/forms';
 import { FilteringComponent } from './components/filtering/filtering.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -13,6 +13,7 @@ import { FilteringComponent } from './components/filtering/filtering.component';
     CommonModule,
     FormsModule
   ],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent],
+  providers: [AuthGuard]
 })
 export class CoreModule { }

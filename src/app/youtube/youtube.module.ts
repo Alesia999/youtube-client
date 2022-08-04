@@ -5,8 +5,9 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { SearchPipe } from './pipes/search.pipe';
 import { ColorDirective } from './directives/color.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CoreModule } from '../core/core.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,14 @@ import { CoreModule } from '../core/core.module';
     ColorDirective,
     MainPageComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, CoreModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule,
+    RouterModule.forChild([{ path: '', component: MainPageComponent }]),
+  ],
+
   exports: [MainPageComponent],
 })
 export class YoutubeModule {}
