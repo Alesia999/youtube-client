@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { YoutubeService } from 'src/app/services/youtube.service';
+import { YoutubeService } from 'src/app/youtube/services/youtube.service';
 
 @Component({
   selector: 'app-filtering',
