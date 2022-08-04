@@ -9,6 +9,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { ColorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     SearchResultsComponent,
     SearchItemComponent,
     SearchPipe,
+    ColorDirective,
   ],
   imports: [
     BrowserModule,
