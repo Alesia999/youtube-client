@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
     this.isResultVisible = event;
     if(this.isResultVisible) {
       this.router.navigateByUrl('/main')
+    } else {
+      this.router.navigateByUrl('/')
     }
-
   }
 }

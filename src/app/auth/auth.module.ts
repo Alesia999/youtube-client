@@ -11,12 +11,9 @@ import { AuthService } from './services/auth.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild([
-      { path: '', component: LoginComponent },
-
-    ]),
+    RouterModule.forChild([{ path: '', component: LoginComponent }]),
   ],
   exports: [LoginComponent, RouterModule],
-  providers: [AuthService]
+  providers: [AuthService],
 })
 export class AuthModule {}

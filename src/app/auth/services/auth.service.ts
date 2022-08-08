@@ -7,10 +7,7 @@ export class AuthService {
   fakeUsername: string = 'a';
   fakePassword: string = 'a';
 
-  constructor() {}
-
   login(username: string, password: string): Observable<any> {
-    // Mock a successful call to an API server.
     if (username == this.fakeUsername && password == this.fakePassword) {
       localStorage.setItem('token', 'my-super-secret-token-from-server');
       return of(new HttpResponse({ status: 200 }));
