@@ -5,9 +5,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, NotFoundComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
