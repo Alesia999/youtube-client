@@ -6,6 +6,7 @@ export interface SearchItem {
   title: string;
   description: string;
   imageUrl: string;
+  imageUrlDetailed: string;
   channelTitle: string;
   tags: string[];
   categoryId: string;

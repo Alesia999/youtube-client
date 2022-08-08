@@ -6,6 +6,7 @@ import { NotFoundComponent } from './auth/pages/not-found/not-found.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './shared/components/home/home.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
+import { SearchItemDetailedComponent } from './youtube/components/search-item-detailed/search-item-detailed.component';
 const routes: Routes = [
   {
     path: '',
@@ -28,6 +29,7 @@ const routes: Routes = [
             canLoad: [AuthGuard],
             canActivate: [AuthGuard],
           },
+          { path: 'main/:id', component: SearchItemDetailedComponent },
           { path: '404', component: NotFoundComponent },
           { path: '**', redirectTo: '/404' },
         ],

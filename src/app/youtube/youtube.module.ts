@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
+import { SearchItemDetailedComponent } from './components/search-item-detailed/search-item-detailed.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     SearchPipe,
     ColorDirective,
     MainPageComponent,
+    SearchItemDetailedComponent,
   ],
   imports: [
     CommonModule,
