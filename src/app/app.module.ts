@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,12 +12,16 @@ import { SearchPipe } from './pipes/search.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { ColorDirective } from './directives/color.directive';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FilteringComponent,
     SearchResultsComponent,
+
     SearchItemComponent,
     SearchPipe,
     ColorDirective,
@@ -32,3 +37,4 @@ import { ColorDirective } from './directives/color.directive';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
