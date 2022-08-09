@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { SearchResponse } from '../models/search-response.model';
 import { SearchResults } from 'src/app/youtube/models/search-results.model';
+import { SearchItem } from '../models/search-item.model';
 
 @Injectable({
   providedIn: 'root',
@@ -39,6 +40,14 @@ export class YoutubeService {
             commentCount: item.statistics.commentCount,
           },
         }));
+      })
+    );
+  }
+
+  getSearchResultsById(id: string) {
+    return this.getSearchResults().pipe(
+      map((searchResults: SearchResults) => {
+        return searchResults.find((item: SearchItem) => item.id === id)!;
       })
     );
   }

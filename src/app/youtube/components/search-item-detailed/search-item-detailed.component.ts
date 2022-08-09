@@ -12,23 +12,19 @@ import { YoutubeService } from '../../services/youtube.service';
 })
 export class SearchItemDetailedComponent implements OnInit {
   searchItemId!: string;
-  searchItem$!: Observable<SearchItem>;
+  searchItem!: SearchItem;
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly youtubeService: YoutubeService
+    
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.searchItemId = params['id'];
     });
-    this.searchItem$ = this.youtubeService.getSearchResults().pipe(
-      map((searchResults: SearchResults) => {
-        return searchResults.find(
-          (item: SearchItem) => item.id === this.searchItemId
-        )!;
-      })
+    this.route.data.subscribe(
+      (searchItem) => (this.searchItem = searchItem['searchItemDetailed'])
     );
   }
 }

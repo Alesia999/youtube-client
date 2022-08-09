@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/pages/login/login.component';
 import { NotFoundComponent } from './auth/pages/not-found/not-found.component';
-
 import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './shared/components/home/home.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { SearchItemDetailedComponent } from './youtube/components/search-item-detailed/search-item-detailed.component';
+import { SearchItemDetailedResolver } from './youtube/components/search-item-detailed/search-item-detailed.resolver';
 const routes: Routes = [
   {
     path: '',
@@ -29,7 +28,13 @@ const routes: Routes = [
             canLoad: [AuthGuard],
             canActivate: [AuthGuard],
           },
-          { path: 'main/:id', component: SearchItemDetailedComponent },
+          {
+            path: 'main/:id',
+            component: SearchItemDetailedComponent,
+            resolve: {
+              searchItemDetailed: SearchItemDetailedResolver,
+            },
+          },
           { path: '404', component: NotFoundComponent },
           { path: '**', redirectTo: '/404' },
         ],
