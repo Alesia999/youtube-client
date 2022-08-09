@@ -1,0 +1,20 @@
+<div class="header-wrapper">
+  <div class="searching">
+    <img class="logo" src="/assets/logo.png" alt="Logo" />
+    <input
+      class="search-input"
+      [(ngModel)]="searchText"
+      placeholder="What do you want to find?"
+    />
+    <button class="search-button" (click)="search(searchText)">search</button>
+    <div class="filtering" (click)="toggleFilter()">
+      <img src="/assets/filtering.svg" />
+    </div>
+  </div>
+  <div class="login">
+    <h2 class="login-name">Your name</h2>
+    <img class="login-image" src="/assets/login-image.png" alt="login image" />
+  </div>
+</div>
+
+<app-filtering *ngIf="isFilterOn"></app-filtering>

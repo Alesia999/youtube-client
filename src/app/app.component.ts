@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'youtube-client';
+  isResultVisible = false;
+
+  showResults(event: boolean) {
+    this.isResultVisible = event;
+  }
 }

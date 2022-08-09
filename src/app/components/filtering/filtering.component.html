@@ -1,0 +1,9 @@
+<div class="sorting">
+  <h2 class="sorting-text">Sorting by</h2>
+  <a class="sorting-option" (click)="sortByDate()">date</a>
+  <a class="sorting-option" (click)="sortByViews()">count of views</a>
+  <a class="sorting-option-text" (click)="sortBySortingText(sortingText)"
+    >by word or sentance</a
+  >
+  <input class="sorting-input" [(ngModel)]="sortingText" />
+</div>

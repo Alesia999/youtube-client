@@ -3,10 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header/header.component';
-import { FilteringComponent } from './header/filtering/filtering.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
-import { SearchItemComponent } from './search/search-item/search-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { FilteringComponent } from './components/filtering/filtering.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { SearchItemComponent } from './components/search-item/search-item.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { ColorDirective } from './directives/color.directive';
+
+
+
 
 @NgModule({
   declarations: [
@@ -14,13 +21,20 @@ import { SearchItemComponent } from './search/search-item/search-item.component'
     HeaderComponent,
     FilteringComponent,
     SearchResultsComponent,
-    SearchItemComponent
+
+    SearchItemComponent,
+    SearchPipe,
+    ColorDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
