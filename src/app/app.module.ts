@@ -9,8 +9,6 @@ import { CoreModule } from './core/core.module';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomeComponent } from './shared/components/home/home.component';
 
-
-
 @NgModule({
   declarations: [AppComponent, MainLayoutComponent, HomeComponent],
   imports: [
@@ -19,7 +17,7 @@ import { HomeComponent } from './shared/components/home/home.component';
     HttpClientModule,
     YoutubeModule,
     AuthModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
