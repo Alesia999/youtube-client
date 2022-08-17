@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { of, debounceTime } from 'rxjs';
+import { YoutubeService } from 'src/app/youtube/services/youtube.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  isResultVisible = false;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private youtubeService: YoutubeService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  showResults(event: boolean) {
-    this.isResultVisible = event;
-    if(this.isResultVisible) {
-      this.router.navigateByUrl('/main')
+  showResults(searchText: string) {
+    if (searchText && searchText.length >= 3) {
+      this.router.navigateByUrl('/main');
     } else {
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/');
     }
   }
 }

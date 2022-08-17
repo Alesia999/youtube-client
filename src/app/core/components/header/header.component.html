@@ -3,10 +3,10 @@
     <img class="logo" src="/assets/logo.png" alt="Logo" />
     <input
       class="search-input"
-      [(ngModel)]="searchText"
+      [(ngModel)] = "searchText"
       placeholder="What do you want to find?"
+      (input)="search(searchText)"
     />
-    <button class="search-button" (click)="search(searchText)">search</button>
     <div class="filtering" (click)="toggleFilter()">
       <img src="/assets/filtering.svg" />
     </div>
@@ -16,7 +16,6 @@
     <img class="login-image" src="/assets/login-image.png" alt="login image" />
     <h2 class="login-name logout" (click)="logout()">Logout</h2>
   </div>
-
 </div>
 
 <app-filtering *ngIf="isFilterOn"></app-filtering>

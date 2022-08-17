@@ -1,4 +1,4 @@
-import { SearchItemStatistics } from './search-item-statistics.model';
+import { VideoItemStatistics } from './video-item-statistics.model';
 
 export interface SearchItem {
   id: string;
@@ -8,7 +8,6 @@ export interface SearchItem {
   imageUrl: string;
   imageUrlDetailed: string;
   channelTitle: string;
+  statistics: VideoItemStatistics;
   tags: string[];
-  categoryId: string;
-  statistics: SearchItemStatistics;
 }
