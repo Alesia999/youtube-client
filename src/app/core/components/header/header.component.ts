@@ -21,8 +21,8 @@ export class HeaderComponent {
 
   search(searchText: string) {
     this.isResultOn.emit(searchText);
-    if (searchText.length >= 3) {
-      this.youtubeService.updateQueryText(searchText);
+    if (searchText && searchText.length >= 3) {
+      this.youtubeService.updateQueryText(searchText.toLowerCase());
     }
   }
 
