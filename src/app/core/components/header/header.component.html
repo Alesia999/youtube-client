@@ -3,7 +3,7 @@
     <img class="logo" src="/assets/logo.png" alt="Logo" />
     <input
       class="search-input"
-      [(ngModel)] = "searchText"
+      [(ngModel)]="searchText"
       placeholder="What do you want to find?"
       (input)="search(searchText)"
     />
@@ -12,9 +12,21 @@
     </div>
   </div>
   <div class="login">
-    <h2 class="login-name">Your name</h2>
+    <h2 class="login-name" *ngIf="auth.isUserLoggedIn() | async; else yourName">
+      {{ userName }}
+    </h2>
+    <ng-template #yourName> <h2 class="login-name">Your Name</h2></ng-template>
     <img class="login-image" src="/assets/login-image.png" alt="login image" />
-    <h2 class="login-name logout" (click)="logout()">Logout</h2>
+    <h2
+      class="login-name logout"
+      (click)="logout()"
+      *ngIf="auth.isUserLoggedIn() | async; else login"
+    >
+      Logout
+    </h2>
+    <ng-template #login>
+      <h2 class="login-name logout" (click)="logout()">Login</h2></ng-template
+    >
   </div>
 </div>
 

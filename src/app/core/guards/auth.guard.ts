@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad {
   constructor(private router: Router, private auth: AuthService) {}
-
+  isAuthenticated = false;
   canLoad(): boolean {
     return this.handleUserAuth();
   }
@@ -15,14 +15,16 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   handleUserAuth(): boolean {
-    const isAuthenticated = this.auth.isUserLoggedIn();
-    if (!isAuthenticated) {
+    this.auth
+      .isUserLoggedIn()
+      .subscribe((logged) => (this.isAuthenticated = logged));
+    if (!this.isAuthenticated) {
       this.router.navigate(['/login'], {
         queryParams: {
           authenticated: false,
         },
       });
     }
-    return isAuthenticated;
+    return this.isAuthenticated;
   }
 }

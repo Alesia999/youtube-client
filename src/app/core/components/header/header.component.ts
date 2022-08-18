@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
 import { YoutubeService } from 'src/app/youtube/services/youtube.service';
@@ -11,10 +11,11 @@ import { YoutubeService } from 'src/app/youtube/services/youtube.service';
 export class HeaderComponent {
   searchText!: string;
   isFilterOn: boolean = false;
+  userName = this.auth.fakeUsername;
   @Output() isResultOn: EventEmitter<string> = new EventEmitter();
 
   constructor(
-    private readonly auth: AuthService,
+    public auth: AuthService,
     private router: Router,
     private youtubeService: YoutubeService
   ) {}

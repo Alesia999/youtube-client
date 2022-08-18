@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import {
-  BehaviorSubject,
-  debounceTime,
-  map,
-  mergeMap,
-  Observable,
-  of,
-} from 'rxjs';
+import { BehaviorSubject, map, mergeMap, Observable } from 'rxjs';
 import { SearchResponse } from '../models/search-response.model';
 import { SearchResults } from 'src/app/youtube/models/search-results.model';
 import { SearchItem } from '../models/search-item.model';
