@@ -6,6 +6,12 @@
  position: relative;
 }
 
+.admin {
+ margin-left: 10px;
+ text-decoration: underline;
+ cursor: pointer;
+}
+
 .header-wrapper {
  display: flex;
  flex-wrap: wrap;
