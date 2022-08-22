@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +12,8 @@ export class HeaderComponent {
   isFilterOn: boolean = false;
   @Output() isResultOn: EventEmitter<boolean> = new EventEmitter();
 
+  constructor(private readonly auth: AuthService, private router: Router) {}
+
   search(searchText: string) {
     if (searchText) {
       this.isResultOn.emit(true);
@@ -20,5 +24,10 @@ export class HeaderComponent {
 
   toggleFilter() {
     this.isFilterOn = !this.isFilterOn;
+  }
+
+  logout() {
+    this.auth.logout();
+    this.router.navigateByUrl('/login');
   }
 }

@@ -30,7 +30,7 @@
       </div>
     </div>
     <h2 class="card-title">{{ searchItem?.title }}</h2>
-    <button class="card-button">more...</button>
+    <button class="card-button" [routerLink]="[searchItem.id]">more...</button>
   </div>
   <div
     class="footer"

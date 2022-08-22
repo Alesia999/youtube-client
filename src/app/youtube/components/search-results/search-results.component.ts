@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { YoutubeService } from 'src/app/services/youtube.service';
-import { SearchResults } from 'src/app/models/search-results.model';
+import { YoutubeService } from 'src/app/youtube/services/youtube.service';
+import { SearchResults } from 'src/app/youtube/models/search-results.model';
 
 @Component({
   selector: 'app-search-results',
