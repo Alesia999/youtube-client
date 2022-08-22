@@ -20,7 +20,7 @@ export class PasswordValidator {
   }
 
   static numbers(control: FormControl): { [key: string]: boolean } | null {
-    if (!/?=.*[0-9]/.test(control.value)) {
+    if (!/[0-9]/.test(control.value)) {
       return {
         numbers: true,
       };
@@ -28,14 +28,12 @@ export class PasswordValidator {
     return null;
   }
 
-  static specialCharacter(
-    control: FormControl
-  ): { [key: string]: boolean } | null {
-    if (!/?=.*[!@#$%^&*]/.test(control.value)) {
-      return {
-        specialCharacter: true,
-      };
-    }
-    return null;
-  }
+  static specialCharacter(control: FormControl): { [key: string]: boolean } | null {
+   if (!/[!@#$%^&*]/.test(control.value)) {
+     return {
+      specialCharacter: true,
+     };
+   }
+   return null;
+ }
 }

@@ -27,9 +27,17 @@
   width: 304px;
   height: 37px;
   background: #E0E0E0;
-  border: none;
   margin-top: 4px;
   margin-bottom: 5px;
+  border: none;
+
+  &.ng-invalid.ng-touched {
+   border: 1px solid red !important;
+  }
+
+  &.ng-valid {
+   border: 1px solid green !important;
+  }
  }
 
  button {
@@ -52,4 +60,8 @@
   right: 40px;
   cursor: pointer;
  }
+}
+
+.validation{
+ color: red;
 }
