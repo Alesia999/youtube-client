@@ -35,4 +35,8 @@ export class HeaderComponent {
     this.auth.logout();
     this.router.navigateByUrl('/login');
   }
+
+  goToAdmin() {
+    this.router.navigateByUrl('/login/admin');
+  }
 }
