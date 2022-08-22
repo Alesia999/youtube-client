@@ -4,8 +4,8 @@ import { HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
-  fakeUsername: string = 'a';
-  fakePassword: string = 'a';
+  fakeUsername: string = 'donejoe@mail.com';
+  fakePassword: string = 'DoneJoe1!';
 
   login(username: string, password: string): Observable<any> {
     if (username == this.fakeUsername && password == this.fakePassword) {
