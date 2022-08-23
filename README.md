@@ -1,5 +1,6 @@
 # YoutubeClient
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 The project was prepared as a homework for Rolling Scopes School Angular online course.
 
 Homework consisted of 5 tasks:
@@ -12,8 +13,6 @@ Homework consisted of 5 tasks:
 ## Design: 
 
 https://www.figma.com/file/tS3Zqk138yXUmRxSWKDv4r/YouTube-client?node-id=0%3A1
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
 
