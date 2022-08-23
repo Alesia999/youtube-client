@@ -9,7 +9,9 @@ Homework consisted of 5 tasks:
 4. Angular. RxJS & Observables. HTTP: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/rxjs-observables-http.md
 5. Angular. Forms: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/forms.md
 
-## Design: https://www.figma.com/file/tS3Zqk138yXUmRxSWKDv4r/YouTube-client?node-id=0%3A1
+## Design: 
+
+https://www.figma.com/file/tS3Zqk138yXUmRxSWKDv4r/YouTube-client?node-id=0%3A1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
