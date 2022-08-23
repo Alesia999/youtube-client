@@ -1,6 +1,7 @@
 # YoutubeClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+
 The project was prepared as a homework for Rolling Scopes School Angular online course.
 
 Homework consisted of 5 tasks:
