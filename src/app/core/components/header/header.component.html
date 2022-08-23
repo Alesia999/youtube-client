@@ -5,7 +5,7 @@
       class="search-input"
       [(ngModel)]="searchText"
       placeholder="What do you want to find?"
-      (change)="search(searchText)"
+      (keyup)="search(searchText)"
     />
     <div class="filtering" (click)="toggleFilter()">
       <img src="/assets/filtering.svg" />

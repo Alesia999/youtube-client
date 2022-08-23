@@ -18,7 +18,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.searchResults$ = this.youtubeService.sharedQueryText
       .pipe(
-        debounceTime(6000),
+        debounceTime(3000),
         switchMap((text) => this.youtubeService.getSearchResults(text))
       )
       .pipe(takeUntil(this.destroy$));
