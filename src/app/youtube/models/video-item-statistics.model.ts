@@ -1,4 +1,4 @@
-export interface SearchItemStatistics {
+export interface VideoItemStatistics {
   viewCount: string;
   likeCount: string;
   dislikeCount: string;

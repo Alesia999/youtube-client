@@ -1,7 +1,8 @@
-<ng-container *ngIf="searchResults$ | async as searchResults">
+<ng-container *ngIf="searchResults$ | async as searchResults; else loading">
   <app-search-item
     class="search-item"
     *ngFor="let searchItem of searchResults | search: filterString"
     [searchItem]="searchItem"
   ></app-search-item>
 </ng-container>
+<ng-template #loading class="loading">Loading...</ng-template>

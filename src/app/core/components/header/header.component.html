@@ -5,18 +5,29 @@
       class="search-input"
       [(ngModel)]="searchText"
       placeholder="What do you want to find?"
+      (keyup)="search(searchText)"
     />
-    <button class="search-button" (click)="search(searchText)">search</button>
     <div class="filtering" (click)="toggleFilter()">
       <img src="/assets/filtering.svg" />
     </div>
   </div>
   <div class="login">
-    <h2 class="login-name">Your name</h2>
+    <h2 class="login-name" *ngIf="auth.isUserLoggedIn() | async; else yourName">
+      {{ userName }}
+    </h2>
+    <ng-template #yourName> <h2 class="login-name">Your Name</h2></ng-template>
     <img class="login-image" src="/assets/login-image.png" alt="login image" />
-    <h2 class="login-name logout" (click)="logout()">Logout</h2>
+    <h2
+      class="login-name logout"
+      (click)="logout()"
+      *ngIf="auth.isUserLoggedIn() | async; else login"
+    >
+      Logout
+    </h2>
+    <ng-template #login>
+      <h2 class="login-name logout" (click)="logout()">Login</h2></ng-template
+    >
   </div>
-
 </div>
 
 <app-filtering *ngIf="isFilterOn"></app-filtering>

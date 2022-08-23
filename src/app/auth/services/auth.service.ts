@@ -20,10 +20,10 @@ export class AuthService {
     localStorage.removeItem('token');
   }
 
-  isUserLoggedIn(): boolean {
+  isUserLoggedIn(): Observable<boolean> {
     if (localStorage.getItem('token') != null) {
-      return true;
+      return of(true);
     }
-    return false;
+    return of(false);
   }
 }
