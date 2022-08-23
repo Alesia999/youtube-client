@@ -1,5 +1,16 @@
 # YoutubeClient
 
+The project was prepared as a homework for Rolling Scopes School Angular online course.
+
+Homework consisted of 5 tasks:
+1. Intro: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/intro.md
+2. Angular. Components. Directives & Pipes: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/components-directives-pipes.md
+3. Angular. Modules & Services. Routing: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/modules-services-routing.md
+4. Angular. RxJS & Observables. HTTP: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/rxjs-observables-http.md
+5. Angular. Forms: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/forms.md
+
+## Design: https://www.figma.com/file/tS3Zqk138yXUmRxSWKDv4r/YouTube-client?node-id=0%3A1
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
