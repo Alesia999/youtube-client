@@ -71,11 +71,36 @@ export class YoutubeService {
   }
 
   getSearchResultsById(id: string) {
-    return this.getSearchResults(this.queryText.value).pipe(
-      map((searchResults: SearchResults) => {
-        return searchResults.find((item: SearchItem) => item.id === id)!;
+    const params = new HttpParams()
+      .set('key', environment.apiKey)
+      .set('part', 'snippet,statistics')
+      .set('id', id);
+    return this.http
+      .get<VideoResponse>(environment.apiUrl + 'videos', {
+        params,
       })
-    );
+      .pipe(
+        map((videoResponse: any) => {
+          const item = videoResponse.items[0];
+          return {
+            id: item.id,
+            date: item.snippet.publishedAt,
+            title: item.snippet.title,
+            description: item.snippet.description,
+            imageUrl: item.snippet.thumbnails.default.url,
+            imageUrlDetailed: item.snippet.thumbnails.high.url,
+            channelTitle: item.snippet.channelTitle,
+            statistics: {
+              viewCount: item.statistics.viewCount,
+              likeCount: item.statistics.likeCount,
+              dislikeCount: item.statistics.dislikeCount,
+              favoriteCount: item.statistics.favoriteCount,
+              commentCount: item.statistics.commentCount,
+            },
+            tags: item.snippet.tags,
+          };
+        })
+      );
   }
 
   updateQueryText(queryText: string) {
