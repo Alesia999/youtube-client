@@ -3,7 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, map, mergeMap, Observable } from 'rxjs';
 import { SearchResponse } from '../models/search-response.model';
 import { SearchResults } from 'src/app/youtube/models/search-results.model';
-import { SearchItem } from '../models/search-item.model';
 import { environment } from 'src/environments/environment';
 import { VideoResponse } from '../models/video-response.model';
 
