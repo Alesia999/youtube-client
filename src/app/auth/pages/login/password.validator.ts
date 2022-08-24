@@ -1,6 +1,15 @@
 import { FormControl } from '@angular/forms';
 
 export class PasswordValidator {
+  static minLength(control: FormControl): { [key: string]: boolean } | null {
+    if (String(control.value).length < 8) {
+      return {
+        minLength: true,
+      };
+    }
+    return null;
+  }
+
   static upperCase(control: FormControl): { [key: string]: boolean } | null {
     if (!/[a-z]/.test(control.value) || !/[A-Z]/.test(control.value)) {
       return {
