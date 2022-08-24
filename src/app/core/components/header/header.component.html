@@ -27,7 +27,9 @@
     <ng-template #login>
       <h2 class="login-name logout" (click)="logout()">Login</h2></ng-template
     >
+    <h2 class="login-name admin" (click)="goToAdmin()">Admin</h2>
   </div>
+
 </div>
 
 <app-filtering *ngIf="isFilterOn"></app-filtering>

@@ -1,0 +1,74 @@
+<div class="admin">
+  <h1 class="title">Create new card</h1>
+  <form [formGroup]="adminForm">
+    <label for="title">Title</label><br />
+    <input id="title" type="text" formControlName="title" />
+    <div
+      class="validation"
+      *ngIf="adminForm.get('title')?.invalid && adminForm.get('title')?.touched"
+    >
+      <small *ngIf="adminForm.get('title')?.errors?.required"
+        >Please enter a title</small
+      >
+      <small *ngIf="adminForm.get('title')?.errors?.minlength"
+        >The title is too short</small
+      >
+      <small *ngIf="adminForm.get('title')?.errors?.maxlength"
+        >The title is too long</small
+      >
+    </div>
+    <label for="description">Description</label>
+    <input id="description" type="text" formControlName="description" />
+    <div
+      class="validation"
+      *ngIf="
+        adminForm.get('description')?.invalid &&
+        adminForm.get('description')?.touched
+      "
+    >
+      <small *ngIf="adminForm.get('description')?.errors?.maxlength"
+        >The description is too long</small
+      >
+    </div>
+    <label for="image">Image</label>
+    <input id="image" type="text" formControlName="image" />
+    <div
+      class="validation"
+      *ngIf="adminForm.get('image')?.invalid && adminForm.get('image')?.touched"
+    >
+      <small *ngIf="adminForm.get('image')?.errors?.required"
+        >Please enter a link to the image</small
+      >
+      <small *ngIf="adminForm.get('image')?.errors?.pattern"
+        >The image link is invalid</small
+      >
+    </div>
+    <label for="video">Video</label>
+    <input id="video" type="text" formControlName="video" />
+    <div
+      class="validation"
+      *ngIf="adminForm.get('video')?.invalid && adminForm.get('video')?.touched"
+    >
+      <small *ngIf="adminForm.get('video')?.errors?.required"
+        >Please enter a link to the video</small
+      >
+      <small *ngIf="adminForm.get('video')?.errors?.pattern"
+        >The video link is invalid</small
+      >
+    </div>
+    <label for="date"> Date</label><br />
+    <input id="date" type="date" formControlName="date" />
+    <div
+      class="validation"
+      *ngIf="adminForm.get('date')?.invalid && adminForm.get('date')?.touched"
+    >
+      <small *ngIf="adminForm.get('date')?.errors?.required"
+        >Please enter a creation date</small
+      >
+      <small *ngIf="adminForm.get('date')?.errors?.ptDate"
+        >The date is invalid</small
+      >
+    </div>
+    <button type="submit" (click)="submit()">Create card</button>
+  </form>
+</div>

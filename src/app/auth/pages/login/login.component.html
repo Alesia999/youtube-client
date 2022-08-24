@@ -3,8 +3,52 @@
   <form [formGroup]="loginForm">
     <label for="username">login</label>
     <input id="username" type="text" formControlName="username" />
+    <div
+      class="validation"
+      *ngIf="
+        loginForm.get('username')?.invalid && loginForm.get('username')?.touched
+      "
+    >
+      <small *ngIf="loginForm.get('username')?.errors?.required"
+        >Please enter a login email</small
+      >
+      <small *ngIf="loginForm.get('username')?.errors?.email"
+        >The login email is invalid</small
+      >
+    </div>
     <label for="password">password</label>
     <input id="password" type="password" formControlName="password" />
+    <div
+      class="validation"
+      *ngIf="
+        loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+      "
+    >
+      <small *ngIf="loginForm.get('password')?.errors?.required"
+        >Please enter a password <br
+      /></small>
+      <small
+        *ngIf="
+          loginForm.get('password')?.errors?.minLength ||
+          loginForm.get('password')?.errors?.upperCase ||
+          loginForm.get('password')?.errors?.numbers ||
+          loginForm.get('password')?.errors?.specialCharacter
+        "
+        >Your password isn't strong enough:
+      </small>
+      <small *ngIf="loginForm.get('password')?.errors?.minLength"
+        >at least 8 characters;
+      </small>
+      <small *ngIf="loginForm.get('password')?.errors?.upperCase"
+        >a mixture of both uppercase and lowercase letters;
+      </small>
+      <small *ngIf="loginForm.get('password')?.errors?.numbers"
+        >a mixture of letters and numbers;
+      </small>
+      <small *ngIf="loginForm.get('password')?.errors?.specialCharacter"
+        >inclusion of at least one special character, e.g., ! @ # ?</small
+      >
+    </div>
     <button type="submit" (click)="login()">Login</button>
   </form>
 </div>
