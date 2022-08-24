@@ -24,9 +24,7 @@ export class AdminComponent {
     ]),
     video: new FormControl('', [
       Validators.required,
-      Validators.pattern(
-        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-      ),
+      Validators.pattern('^(https?://)?((www.)?youtube.com|youtu.be)/.+$'),
     ]),
     date: new FormControl('', [Validators.required, DateValidator.ptDate]),
   });
